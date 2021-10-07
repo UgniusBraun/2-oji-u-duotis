@@ -112,11 +112,11 @@ void nuskaitymas(vector<studentas> &vektorius, int &arivesti)
             }
             cout << "Ar yra dar studentu? Jei taip, spauskite 1, jei ne, spauskite 2." << endl;
             cin >> tikrinimas;
+            vektorius.push_back(stud);
             if (tikrinimas == 2)
             {
                 break;
             }
-            vektorius.push_back(stud);
         }
     }
     else
