@@ -1,18 +1,12 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 struct studentas
 {
     string Vardas, Pavarde;
-    vector <double> NamuDarbai;
-    int Egzaminas;
     double Galutinis;
 };
-
-vector<int> generuoti_pazymius (int pazymiu_kiekis);
-double galutinis_pazymys (vector<int> skaiciai);
-int generuoti_faila (vector<int> pazymiai);
-void skaitymas_i_faila (vector<studentas> &stud, int studentu_kiekis);
 
 vector<int> generuoti_pazymius (int pazymiu_kiekis)
 {
@@ -31,21 +25,18 @@ double galutinis_pazymys (vector<int> skaiciai)
     return stud.Galutinis;
 }
 
-int generuoti_faila (vector<int> pazymiai)
+void generuoti_faila (vector<int> pazymiai, int studentu_kiekis)
 {
     vector<int> skaiciai;
     studentas stud;
-    int studentu_kiekis;
-    cout << "Keletui studentu norite atsitiktinai sugeneruoti pazymius?" << endl;
-    cin >> studentu_kiekis;
     string failo_pav = "Studentai_" + to_string(studentu_kiekis) + ".txt";
 
     auto pradzia = chrono::high_resolution_clock::now();
 
     ofstream out(failo_pav);
-    out << setw(20) << left << "Vardas" << setw(20) << left << "Pavarde" << setw(20) << left << "Galutinis (Vid.)";
+    out << setw(20) << left << "Vardas" << setw(20) << left << "Pavarde" << setw(20) << left << "Galutinis (Vid.)" << endl;
 
-    for (int i=1; i<studentu_kiekis + 1; i++)
+    for (int i=1; i <= studentu_kiekis; i++)
     {
         skaiciai = generuoti_pazymius(5);
         out << setw(20) << "Vardas" + to_string(i) << setw(20) << "Pavarde" + to_string(i) << setw(18) << galutinis_pazymys(skaiciai) << endl;
@@ -54,98 +45,88 @@ int generuoti_faila (vector<int> pazymiai)
 
     auto pabaiga = chrono::high_resolution_clock::now();
     chrono::duration<double> trukme = pabaiga - pradzia;
-    cout << "Failo su " + to_string(studentu_kiekis) + " studentu generavimas uztruko: " << trukme.count() << " sekundziu" << endl;
-
-    return studentu_kiekis;
+    cout << "Failo su " + to_string(studentu_kiekis) + " studentu generavimas uztruko: " << trukme.count() << " sek." << endl;
 }
 
 void skaitymas_i_faila (vector<studentas> &stud, int studentu_kiekis)
 {
-    int studentu_skaicius = 0;
     string failo_pav = "Studentai_" + to_string(studentu_kiekis) + ".txt";
     string laikinas;
     ifstream in;
     in.open(failo_pav);
     if (in.is_open())
     {
+        stud.resize(studentu_kiekis + 1);
         auto pradzia = chrono::high_resolution_clock::now();
-		auto p = pradzia;
-		getline(in >> ws, laikinas);
-		while (studentu_skaicius < studentu_kiekis)
+        in.ignore(256, '\n');
+        for (int i=1 ;i <= studentu_kiekis; i++)
         {
-            stud.resize(stud.size() + 1);
-            in >> stud.at(studentu_skaicius).Vardas >> stud.at(studentu_skaicius).Pavarde >> stud.at(studentu_skaicius).Galutinis;
-            studentu_skaicius++;
+            in >> stud.at(i).Vardas >> stud.at(i).Pavarde >> stud.at(i).Galutinis;
         }
         auto pabaiga = chrono::high_resolution_clock::now();
         chrono::duration<double> trukme = pabaiga - pradzia;
-        cout << "Failo su " + to_string(studentu_kiekis) + " studentu generavimas uztruko: " << trukme.count() << " sek." << endl;
+        cout << "Failo su " + to_string(studentu_kiekis) + " studentu nuskaitymas uztruko: " << trukme.count() << " sek." << endl;
     }
 }
 
 int main()
 {
+    long int studentu_kiekis = 1000;
     vector<int> skaiciai;
-    int studentu_kiekis = generuoti_faila(skaiciai);
     vector<studentas> vektorius;
-    skaitymas_i_faila(vektorius, studentu_kiekis);
     vector<studentas> kietekai;
     vector<studentas> nenaudeliai;
-    int kiet = 0, nenaud = 0;
-
-    auto pradzia = chrono::high_resolution_clock::now();
-
-	for (int i=0; i<studentu_kiekis; i++)
+    for (int c=0; c<5; c++)
     {
-        if (vektorius.at(i).Galutinis >= 5.00)
+        generuoti_faila(skaiciai, studentu_kiekis);
+        skaitymas_i_faila(vektorius, studentu_kiekis);
+        auto pradzia = chrono::high_resolution_clock::now();
+
+        for (int i=1; i <= studentu_kiekis; i++)
         {
-            kietekai.push_back(vektorius.at(i));
-            kiet++;
+            if (vektorius.at(i).Galutinis >= 5)
+            {
+                kietekai.push_back(vektorius.at(i));
+            }
+            else
+            {
+                nenaudeliai.push_back(vektorius.at(i));
+            }
         }
-    }
-    for (int i=0; i<studentu_kiekis; i++)
-    {
-        if (vektorius.at(i).Galutinis <= 5.00)
+
+        auto pabaiga = chrono::high_resolution_clock::now();
+        chrono::duration<double> trukme = pabaiga - pradzia;
+        cout << "Failo grupavimas su " + to_string(studentu_kiekis)+ " studentu i dvi grupes uztruko : " << trukme.count() << " sek." << endl;
+
+        string failo_pav;
+        failo_pav = "Kietekai_" + to_string(studentu_kiekis) + ".txt";
+
+        auto pradzia_kiet = chrono::high_resolution_clock::now();
+
+        ofstream out_kiet(failo_pav);
+        for (int i=0; i < kietekai.size(); i++)
         {
-            nenaudeliai.push_back(vektorius.at(i));
-            nenaud++;
+            out_kiet << kietekai.at(i).Vardas << setw(20) << kietekai.at(i).Pavarde << setw(18) << kietekai.at(i).Galutinis << endl;
         }
-    }
-    auto pabaiga = chrono::high_resolution_clock::now();
-	chrono::duration<double> trukme = pabaiga - pradzia;
-	cout << "Failo grupavimas su " + to_string(studentu_kiekis)+ " studentu i dvi grupes uztruko : " << trukme.count() << " sek." << endl;
+        auto pabaiga_kiet = chrono::high_resolution_clock::now();
+        chrono::duration<double> trukme_kiet = pabaiga_kiet - pradzia_kiet;
+        cout << "Kieteku isvedimas su " + to_string(studentu_kiekis) + " studentu uztruko : " << trukme_kiet.count() << " sek." << endl;
 
-	string failo_pav;
-	failo_pav = "Kietekai_" + to_string(studentu_kiekis) + ".txt";
 
-	auto pradzia_kiet = chrono::high_resolution_clock::now();
+        failo_pav = "Nenaudeliai_" + to_string(studentu_kiekis) + ".txt";
 
-	ofstream out_kiet(failo_pav);
-	for (int i=0; i<studentu_kiekis; i++)
-    {
-        if (vektorius.at(i).Galutinis >= 5.00)
+        auto pradzia_nen = chrono::high_resolution_clock::now();
+
+        ofstream out_nen(failo_pav);
+        for (int i=0; i < nenaudeliai.size(); i++)
         {
-            out_kiet << vektorius.at(i).Vardas << setw(20) << vektorius.at(i).Pavarde << setw(18) << vektorius.at(i).Galutinis << endl;
+            out_nen << nenaudeliai.at(i).Vardas << setw(20) << nenaudeliai.at(i).Pavarde << setw(18) << nenaudeliai.at(i).Galutinis << endl;
         }
+        auto pabaiga_nen = chrono::high_resolution_clock::now();
+        chrono::duration<double> trukme_nen = pabaiga_nen - pradzia_nen;
+        cout << "Nenaudeliu isvedimas su " + to_string(studentu_kiekis) + " studentu uztruko : " << trukme_nen.count() << " sek." << endl;
+        cout << endl;
+        studentu_kiekis *= 10;
     }
-    auto pabaiga_kiet = chrono::high_resolution_clock::now();
-	chrono::duration<double> trukme_kiet = pabaiga_kiet - pradzia_kiet;
-	cout << "Kieteku isvedimas su " + to_string(studentu_kiekis) + " studentu uztruko : " << trukme_kiet.count() << " sek." << endl;
-
-
-    failo_pav = "Nenaudeliai_" + to_string(studentu_kiekis) + ".txt";
-
-	auto pradzia_nen = chrono::high_resolution_clock::now();
-
-	ofstream out_nen(failo_pav);
-	for (int i=0; i<studentu_kiekis; i++)
-    {
-        if (vektorius.at(i).Galutinis <= 5.00)
-        {
-            out_nen << vektorius.at(i).Vardas << setw(20) << vektorius.at(i).Pavarde << setw(18) << vektorius.at(i).Galutinis << endl;
-        }
-    }
-    auto pabaiga_nen = chrono::high_resolution_clock::now();
-	chrono::duration<double> trukme_nen = pabaiga_nen - pradzia_nen;
-	cout << "Nenaudeliu isvedimas su " + to_string(studentu_kiekis) + " studentu uztruko : " << trukme_nen.count() << " sek." << endl;
+    return 0;
 }
