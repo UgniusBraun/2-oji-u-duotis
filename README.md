@@ -16,12 +16,11 @@ Paleidus programą, prašome sekti komandinėje eilutėje nurodytus instrukcijas
 Vienas iš galimymų programos eigos variantų yra toks:
 
 ```shell
--> Please enter first name: Vardenis
--> Please enter last name: Pavardenis
--> 1 studento 1 namu darbo ivertinimas [0-10], (Jei norite gauti atsitiktini skaiciu, iveskite y): 
--> 1 studento 2 namu darbo ivertinimas [0-10], (Jei norite gauti atsitiktini skaiciu, iveskite y):
--> Ar prideti dar viena studenta? [Y/N]: 
--> Rodyti vidurki ar mediana? [V/M]:
+-> Iveskite studento varda bei pavarde: Vardenis Pavardenis
+-> Įveskite studento namų darbų įvertinimą [0-10], (Jei norite gauti atsitiktinį skaičių, spauskite 'r' klavišą): 
+-> Įveskite studento egzamino įvertinimą [0-10], (Jei norite gauti atsitiktinį skaičių, spauskite 'r' klavišą):
+-> Ar yra dar studentų? Jei taip spauskite 1, jei ne - 2. 
+-> Ar norite vidurkio ar medianos? Jei vidurkio spauskite 1, jei medianos - 2.
 ```
 
 Po sėkmingo duomenų suvedimo į terminalo langą išvedami rezultatai panašia forma:
