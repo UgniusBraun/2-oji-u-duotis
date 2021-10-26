@@ -1,30 +1,18 @@
 # Pažymių vidurkio skaičiuoklė
 
-Programa yra skirta apskaičiuoti pažymių vidurkį arba medianą.
+Programa atsitiktinai generuoja pažymius dideliam kiekiui studentų, suskaičiuoja jų galutinį pažymį, ir pagal jį skirsto studentus į geriau besimokančius "kietekus" bei prasčiau besimokančius "nenaudėlius".
 
 ## Veikimo principas
 
-Paleidus programą komandinėje eilutėje yra prašoma atlikti keletą veiksmų:
+Paleidus programą ji atlieka šiuos veiksmus:
 
-- Suvesti duomenis (t.y. vardas, pavardė, namu darbu pažymiai, egzamino įvertinimas)
-- Po duomenų suvedimo yra apskaičiuojamas galutinis pažymis įvertinimų vidurkiu arba mediana.
+- Sukuria studentų failą, kiekvienam studentui atsitiktinai sugeneravusi tam tikrą skaičių namų darbų pažymių, bei egzamino pažymį.
+- Apskaičiuoja kiekvieno studento galutinį pažymį.
+- Pagal tai, ar galutinis pažymys yra didesnis už praeinamą penketą, ar ne, skirsto studentus į dvi grupes.
+- Sukuria du failus, į kuriuos išvedami atitinkamai į grupes suskirstyti studentai.
+- Skaičiuoja kiek laiko buvo vykdomas kiekvienas iš šių žingsnių, ir šį vykdymo laiką išveda į terminalo langą.
 
-Programa suteikia galimybę generuoti atsitiktinius namų darbų rezultatus bei egzamino balą, bei suvesti daugiau nei vieno studento duomenis.
-
-Paleidus programą, prašome sekti komandinėje eilutėje nurodytus instrukcijas.
-
-Vienas iš galimymų programos eigos variantų yra toks:
-
-```shell
--> Please enter first name: Vardenis
--> Please enter last name: Pavardenis
--> 1 studento 1 namu darbo ivertinimas [0-10], (Jei norite gauti atsitiktini skaiciu, iveskite y): 
--> 1 studento 2 namu darbo ivertinimas [0-10], (Jei norite gauti atsitiktini skaiciu, iveskite y):
--> Ar prideti dar viena studenta? [Y/N]: 
--> Rodyti vidurki ar mediana? [V/M]:
-```
-
-Po sėkmingo duomenų suvedimo į terminalo langą išvedami rezultatai panašia forma:
+Po sėkmingo programos įvykdymo į terminalo langą išvedami rezultatai panašia forma:
 
 ```shell
 Vardas      Pavarde         Galutinis Vid. Galutinis Med.
@@ -33,6 +21,29 @@ Vardenis    Pavardenis      5.25
 ```
 
 Galutinis vidurkis yra apskaičiuojamas pagal formulę `galutinis = 0.4 * vidurkis + 0.6 * egzaminas`.
+
+Programos veikimo greičio analizė:
+
+### Failų sugeneravimo laikai
+| Studentų sk.       | 1000    | 10,000  | 100,000   | 1,000,000  | 10,000,000 |
+| :----------    | :------ | :------ | :-------- | :--------- | :--------- |
+| Laikas (s)  | 0.0159 | 0.1366 | 1.2027   | 11.8328    | 157.1554    |
+### Failų nuskaitymo laikai
+| Studentų sk.       | 1000    | 10,000  | 100,000   | 1,000,000  | 10,000,000 |
+| :----------    | :------ | :------ | :-------- | :--------- | :--------- |
+| Laikas (s)  | 0.0079 | 0.0698 | 0.6593   | 6.1724    | 17.0376    |
+### Failų grupavimo laikai
+| Studentų sk.       | 1000    | 10,000  | 100,000   | 1,000,000  | 10,000,000 |
+| :----------    | :------ | :------ | :-------- | :--------- | :--------- |
+| Laikas (s)  | 0.0009 | 0.0059 | 0.0478   | 0.5305   | 1.4129    |
+### "Kietekų" išvedimo laikai
+| Studentų sk.       | 1000    | 10,000  | 100,000   | 1,000,000  | 10,000,000 |
+| :----------    | :------ | :------ | :-------- | :--------- | :--------- |
+| Laikas (s)  | 0.0059 | 0.0418 | 0.4338   | 4.0382    |75.0529   |
+### "Nenaudėlių" išvedimo laikai
+| Studentų sk.       | 1000    | 10,000  | 100,000   | 1,000,000  | 10,000,000 |
+| :----------    | :------ | :------ | :-------- | :--------- | :--------- |
+| Laikas (s)  | 0.0029 | 0.0299 | 0.3001   | 2.9860    |45.9274   |
 
 ## Programos diegimas ir paleidimas
 
