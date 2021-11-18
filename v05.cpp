@@ -12,19 +12,10 @@ struct studentas
     double Galutinis;
 };
 
-studentas iteratorius(list<studentas> list1, int i1)
-{
-    list<studentas>::iterator itr = list1.begin();
-    for (int i=0; i<i1; i++)
-    {
-        itr++;
-    }
-    return *itr;
-}
 
-list<int> generuoti_pazymius (int pazymiu_kiekis) //vector?
+list<int> generuoti_pazymius (int pazymiu_kiekis)
 {
-    list<int> skaiciai; //                            ^^
+    list<int> skaiciai;
     for (int i=0; i<pazymiu_kiekis; i++)
     {
         skaiciai.push_back(dist(mt));
@@ -51,6 +42,7 @@ void generuoti_faila (int studentu_kiekis)
 
     for (int i=1; i <= studentu_kiekis; i++)
     {
+
         skaiciai = generuoti_pazymius(5);
         out << setw(20) << "Vardas" + to_string(i) << setw(20) << "Pavarde" + to_string(i) << setw(18) << galutinis_pazymys(skaiciai) << endl;
         skaiciai.clear();
@@ -97,11 +89,12 @@ int main()
 
         for (int i=0; i<studentu_kiekis; i++)
         {
-            if (iteratorius(sarasas, i).Galutinis >= 5)
+            if (sarasas.front().Galutinis >= 5)
             {
-                kietekai.push_back(iteratorius(sarasas, i));
+                kietekai.push_back(sarasas.front());
             }
-            else nenaudeliai.push_back(iteratorius(sarasas, i));
+            else nenaudeliai.push_back(sarasas.front());
+            sarasas.pop_front();
         }
 
         auto pabaiga = chrono::high_resolution_clock::now();
@@ -114,9 +107,11 @@ int main()
         auto pradzia_kiet = chrono::high_resolution_clock::now();
 
         ofstream out_kiet(failo_pav);
-        for (int i=0; i < kietekai.size(); i++)
+        int x = kietekai.size();
+        for (int i=0; i < x; i++)
         {
-            out_kiet << iteratorius(kietekai, i).Vardas << setw(20) << iteratorius(kietekai, i).Pavarde << setw(18) << iteratorius(kietekai, i).Galutinis << endl;
+            out_kiet << kietekai.front().Vardas << setw(20) << kietekai.front().Pavarde << setw(18) << kietekai.front().Galutinis << endl;
+            kietekai.pop_front();
         }
         out_kiet.close();
         auto pabaiga_kiet = chrono::high_resolution_clock::now();
@@ -129,9 +124,11 @@ int main()
         auto pradzia_nen = chrono::high_resolution_clock::now();
 
         ofstream out_nen(failo_pav);
-        for (int i=0; i < nenaudeliai.size(); i++)
+        int y = nenaudeliai.size();
+        for (int i=0; i < y; i++)
         {
-            out_nen << iteratorius(nenaudeliai, i).Vardas << setw(20) << iteratorius(nenaudeliai, i).Pavarde << setw(18) << iteratorius(nenaudeliai, i).Galutinis << endl;
+            out_nen << nenaudeliai.front().Vardas << setw(20) << nenaudeliai.front().Pavarde << setw(18) << nenaudeliai.front().Galutinis << endl;
+            nenaudeliai.pop_front();
         }
         out_nen.close();
         auto pabaiga_nen = chrono::high_resolution_clock::now();
