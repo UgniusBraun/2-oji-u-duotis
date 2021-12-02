@@ -37,7 +37,7 @@ Failo grupavimo laikas:
 Failo grupavimo laikas:
 | Studentų sk.       | 1000    | 10,000  | 100,000   | 1,000,000  | 10,000,000 |
 | :----------    | :------ | :------ | :-------- | :--------- | :--------- |
-| Laikas (s)  | 0.0545 | 5.4431 | ~9min   | ~15h   |  ~2mėn    |
+| Laikas (s)  | 0.0009 | 0.0059 | 0.0599   | 0.6652   |  7.7092    |
 
 ### Su std::list konteineriu, v.05 realizacija:
 
