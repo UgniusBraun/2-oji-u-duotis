@@ -81,7 +81,7 @@ int main()
     vector<studentas> vektorius;
     vector<studentas> kietekai;
     vector<studentas> nenaudeliai;
-    for (int c=0; c<2; c++)
+    for (int c=0; c<5; c++)
     {
         generuoti_faila(studentu_kiekis);
         skaitymas_i_faila(vektorius, studentu_kiekis);
