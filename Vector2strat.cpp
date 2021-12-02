@@ -74,6 +74,11 @@ void skaitymas_i_faila (vector<studentas> &stud, int studentu_kiekis)
     }
 }
 
+bool Lyginimas (studentas stud)
+{
+    return stud.Galutinis < 5;
+}
+
 int main()
 {
     long int studentu_kiekis = 1000;
@@ -81,36 +86,20 @@ int main()
     vector<studentas> vektorius;
     vector<studentas> kietekai;
     vector<studentas> nenaudeliai;
-    for (int c=0; c<3; c++)
+    for (int c=0; c<5; c++)
     {
         generuoti_faila(studentu_kiekis);
         skaitymas_i_faila(vektorius, studentu_kiekis);
         auto pradzia = chrono::high_resolution_clock::now();
 
-        vector<studentas>:: iterator iteratorius = vektorius.begin();
-        while (iteratorius != vektorius.end())
+        for (auto iteratorius = vektorius.begin(); iteratorius != vektorius.end(); ++iteratorius)
         {
             if (iteratorius->Galutinis < 5)
             {
                 nenaudeliai.push_back(*iteratorius);
-                iteratorius = vektorius.erase(iteratorius);
-            }
-            else iteratorius++;
-        }
-
-        /*
-        for (int i=1; i <= studentu_kiekis; i++)
-        {
-            if (vektorius.at(i).Galutinis >= 5)
-            {
-                kietekai.push_back(vektorius.at(i));
-            }
-            else
-            {
-                nenaudeliai.push_back(vektorius.at(i));
             }
         }
-         */
+        remove_if(vektorius.begin(), vektorius.end(), Lyginimas);
 
         auto pabaiga = chrono::high_resolution_clock::now();
         chrono::duration<double> trukme = pabaiga - pradzia;
