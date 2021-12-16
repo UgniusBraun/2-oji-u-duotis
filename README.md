@@ -23,42 +23,109 @@ Vardenis    Pavardenis      5.25
 Galutinis vidurkis yra apskaičiuojamas pagal formulę `galutinis = 0.4 * vidurkis + 0.6 * egzaminas`.
 
 
-Programos veikimo greičio analizė:    DAR NEBAIGTA!
+### Programos veikimo greičio analizė:
 
 Su struktūra:
 
+Failo nuskaitymo laikas:
+| Studentų sk.       | 100,000   | 1,000,000  |
+| :----------    | :------ | :------ |
+| Laikas (s)  | 0.6593 | 6.1724 |
+
 Failo grupavimo laikas:
-| Studentų sk.       | 1000    | 10,000  | 100,000   | 1,000,000  | 10,000,000 |
-| :----------    | :------ | :------ | :-------- | :--------- | :--------- |
-| Laikas (s)  | 0.0009 | 0.0059 | 0.0478   | 0.5305   | 1.4129    |
+| Studentų sk.       | 100,000   | 1,000,000  |
+| :----------    | :------ | :------ |
+| Laikas (s)  | 0.0478 | 0.5305 |
+
+Su klase:
+
+Failo nuskaitymo laikas:
+| Studentų sk.       | 100,000   | 1,000,000  |
+| :----------    | :------ | :------ |
+| Laikas (s)  | 0.8328 | 5.1269 |
+
+Failo grupavimo laikas:
+| Studentų sk.       | 100,000   | 1,000,000  |
+| :----------    | :------ | :------ |
+| Laikas (s)  | 0.0787 | 0.6360 |
+
+### O1 optimizacijos lygis:
 
 Su struktūra:
 
+Failo nuskaitymo laikas:
+| Studentų sk.       | 100,000   | 1,000,000  |
+| :----------    | :------ | :------ |
+| Laikas (s)  | 0.0009 | 0.0059 |
+
 Failo grupavimo laikas:
-| Studentų sk.       | 1000    | 10,000  | 100,000   | 1,000,000  | 10,000,000 |
-| :----------    | :------ | :------ | :-------- | :--------- | :--------- |
-| Laikas (s)  | 0.0009 | 0.0069 | 0.0607   | 0.7306   |  7.9546    |
+| Studentų sk.       | 100,000   | 1,000,000  |
+| :----------    | :------ | :------ |
+| Laikas (s)  | 0.0009 | 0.0069 |
 
 Su klase:
 
+Failo nuskaitymo laikas:
+| Studentų sk.       | 100,000   | 1,000,000  |
+| :----------    | :------ | :------ |
+| Laikas (s)  | 0.0009 | 0.0059 |
+
 Failo grupavimo laikas:
-| Studentų sk.       | 1000    | 10,000  | 100,000   | 1,000,000  | 10,000,000 |
-| :----------    | :------ | :------ | :-------- | :--------- | :--------- |
-| Laikas (s)  | 0 | 0.0050 | 0.0439   | 0.4374   | 4.4586    |
+| Studentų sk.       | 100,000   | 1,000,000  |
+| :----------    | :------ | :------ |
+| Laikas (s)  | 0.0009 | 0.0069 |
+
+### O2 optimizacijos lygis:
+
+Su struktūra:
+
+Failo nuskaitymo laikas:
+| Studentų sk.       | 100,000   | 1,000,000  |
+| :----------    | :------ | :------ |
+| Laikas (s)  | 0.0009 | 0.0059 |
+
+Failo grupavimo laikas:
+| Studentų sk.       | 100,000   | 1,000,000  |
+| :----------    | :------ | :------ |
+| Laikas (s)  | 0.0009 | 0.0069 |
 
 Su klase:
 
-Failo grupavimo laikas:
-| Studentų sk.       | 1000    | 10,000  | 100,000   | 1,000,000  | 10,000,000 |
-| :----------    | :------ | :------ | :-------- | :--------- | :--------- |
-| Laikas (s)  | 0 | 0.0079 | 0.0658   | 0.6203   | 6.3192    |
-
-### Su std::list konteineriu, 2 strategija:
+Failo nuskaitymo laikas:
+| Studentų sk.       | 100,000   | 1,000,000  |
+| :----------    | :------ | :------ |
+| Laikas (s)  | 0.0009 | 0.0059 |
 
 Failo grupavimo laikas:
-| Studentų sk.       | 1000    | 10,000  | 100,000   | 1,000,000  | 10,000,000 |
-| :----------    | :------ | :------ | :-------- | :--------- | :--------- |
-| Laikas (s)  | 0 | 0.0029 | 0.0299   | 0.2592   | 2.4330    |
+| Studentų sk.       | 100,000   | 1,000,000  |
+| :----------    | :------ | :------ |
+| Laikas (s)  | 0.0009 | 0.0069 |
+
+### O3 optimizacijos lygis:
+
+Su struktūra:
+
+Failo nuskaitymo laikas:
+| Studentų sk.       | 100,000   | 1,000,000  |
+| :----------    | :------ | :------ |
+| Laikas (s)  | 0.0009 | 0.0059 |
+
+Failo grupavimo laikas:
+| Studentų sk.       | 100,000   | 1,000,000  |
+| :----------    | :------ | :------ |
+| Laikas (s)  | 0.0009 | 0.0069 |
+
+Su klase:
+
+Failo nuskaitymo laikas:
+| Studentų sk.       | 100,000   | 1,000,000  |
+| :----------    | :------ | :------ |
+| Laikas (s)  | 0.0009 | 0.0059 |
+
+Failo grupavimo laikas:
+| Studentų sk.       | 100,000   | 1,000,000  |
+| :----------    | :------ | :------ |
+| Laikas (s)  | 0.0009 | 0.0069 |
 
 ## Programos diegimas ir paleidimas
 
