@@ -23,42 +23,42 @@ Vardenis    Pavardenis      5.25
 Galutinis vidurkis yra apskaičiuojamas pagal formulę `galutinis = 0.4 * vidurkis + 0.6 * egzaminas`.
 
 
-Programos veikimo greičio analizė:
+Programos veikimo greičio analizė:    DAR NEBAIGTA!
 
-### Su std::vector konteineriu, 1 strategija:
+Su struktūra:
 
 Failo grupavimo laikas:
 | Studentų sk.       | 1000    | 10,000  | 100,000   | 1,000,000  | 10,000,000 |
 | :----------    | :------ | :------ | :-------- | :--------- | :--------- |
 | Laikas (s)  | 0.0009 | 0.0059 | 0.0478   | 0.5305   | 1.4129    |
 
-### Su std::vector konteineriu, 2 strategija:
+Su struktūra:
 
 Failo grupavimo laikas:
 | Studentų sk.       | 1000    | 10,000  | 100,000   | 1,000,000  | 10,000,000 |
 | :----------    | :------ | :------ | :-------- | :--------- | :--------- |
-| Laikas (s)  | 0.0009 | 0.0059 | 0.0599   | 0.6652   |  7.7092    |
+| Laikas (s)  | 0.0009 | 0.0069 | 0.0607   | 0.7306   |  7.9546    |
 
-### Su std::list konteineriu, v.05 realizacija:
-
-Failo grupavimo laikas:
-| Studentų sk.       | 1000    | 10,000  | 100,000   | 1,000,000  | 10,000,000 |
-| :----------    | :------ | :------ | :-------- | :--------- | :--------- |
-| Laikas (s)  | 0 | 0.0156 | 0.0624   | 0.4576   | 4.6564    |
-
-### Su std::list konteineriu, 1 strategija:
+Su klase:
 
 Failo grupavimo laikas:
 | Studentų sk.       | 1000    | 10,000  | 100,000   | 1,000,000  | 10,000,000 |
 | :----------    | :------ | :------ | :-------- | :--------- | :--------- |
-| Laikas (s)  | 0.0009 | 0.0069 | 0.0677   | 0.6194   | 6.2792    |
+| Laikas (s)  | 0 | 0.0050 | 0.0439   | 0.4374   | 4.4586    |
+
+Su klase:
+
+Failo grupavimo laikas:
+| Studentų sk.       | 1000    | 10,000  | 100,000   | 1,000,000  | 10,000,000 |
+| :----------    | :------ | :------ | :-------- | :--------- | :--------- |
+| Laikas (s)  | 0 | 0.0079 | 0.0658   | 0.6203   | 6.3192    |
 
 ### Su std::list konteineriu, 2 strategija:
 
 Failo grupavimo laikas:
 | Studentų sk.       | 1000    | 10,000  | 100,000   | 1,000,000  | 10,000,000 |
 | :----------    | :------ | :------ | :-------- | :--------- | :--------- |
-| Laikas (s)  | 0.0009 | 0.0039 | 0.0419   | 0.2493   | 2.4516    |
+| Laikas (s)  | 0 | 0.0029 | 0.0299   | 0.2592   | 2.4330    |
 
 ## Programos diegimas ir paleidimas
 
@@ -74,3 +74,4 @@ Failo grupavimo laikas:
 - [v.04](https://github.com/UgniusBraun/1-oji-uzduotis/releases/tag/V.04) - Ketvirtoji programos versija. Pridėta galimybė generuoti failą, su daug studentų, bei atliekama programos veikimo greičio analizė.
 - [v.05](https://github.com/UgniusBraun/1-oji-uzduotis/releases/tag/V.05) - Penktoji programos versija. Pakeistas naudojamas konteineris iš vector į list. Taip pat patobulintos programos veikimo sparta palyginta su praeitos realizacijos veikimo sparta.
 - [v.10](https://github.com/UgniusBraun/1-oji-uzduotis/releases/tag/V.10) - Šeštoji programos versija. Grupavimo dalis tiek vector tiek list konteineriams padaryta naudojantis pora skirtingų strategijų. Visų bandytų variantų veikimo sparta palyginama.
+- [v1.1](https://github.com/UgniusBraun/2-oji-uzduotis/releases/tag/V.10) - Septintoji programos versija. Iš struktūros tipo pakeista į klasės tipą. Taip pat panaudoti skirtingi kompiliatoriaus optimizavimo lygiai, ir palyginta veikimo sparta visais variantais.
