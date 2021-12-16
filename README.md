@@ -56,24 +56,24 @@ Su struktūra:
 Failo nuskaitymo laikas:
 | Studentų sk.       | 100,000   | 1,000,000  |
 | :----------    | :------ | :------ |
-| Laikas (s)  | 0.0009 | 0.0059 |
+| Laikas (s)  | 0.7854 | 6.5181 |
 
 Failo grupavimo laikas:
 | Studentų sk.       | 100,000   | 1,000,000  |
 | :----------    | :------ | :------ |
-| Laikas (s)  | 0.0009 | 0.0069 |
+| Laikas (s)  | 0.0519 | 0.6622 |
 
 Su klase:
 
 Failo nuskaitymo laikas:
 | Studentų sk.       | 100,000   | 1,000,000  |
 | :----------    | :------ | :------ |
-| Laikas (s)  | 0.0009 | 0.0059 |
+| Laikas (s)  | 0.6567 | 5.2163 |
 
 Failo grupavimo laikas:
 | Studentų sk.       | 100,000   | 1,000,000  |
 | :----------    | :------ | :------ |
-| Laikas (s)  | 0.0009 | 0.0069 |
+| Laikas (s)  | 0.0773 | 0.7092 |
 
 ### O2 optimizacijos lygis:
 
@@ -82,24 +82,24 @@ Su struktūra:
 Failo nuskaitymo laikas:
 | Studentų sk.       | 100,000   | 1,000,000  |
 | :----------    | :------ | :------ |
-| Laikas (s)  | 0.0009 | 0.0059 |
+| Laikas (s)  | 0.7030 | 6.3510 |
 
 Failo grupavimo laikas:
 | Studentų sk.       | 100,000   | 1,000,000  |
 | :----------    | :------ | :------ |
-| Laikas (s)  | 0.0009 | 0.0069 |
+| Laikas (s)  | 0.0518 | 0.6718 |
 
 Su klase:
 
 Failo nuskaitymo laikas:
 | Studentų sk.       | 100,000   | 1,000,000  |
 | :----------    | :------ | :------ |
-| Laikas (s)  | 0.0009 | 0.0059 |
+| Laikas (s)  | 0.5614 | 5.2490 |
 
 Failo grupavimo laikas:
 | Studentų sk.       | 100,000   | 1,000,000  |
 | :----------    | :------ | :------ |
-| Laikas (s)  | 0.0009 | 0.0069 |
+| Laikas (s)  | 0.0618 | 0.6537 |
 
 ### O3 optimizacijos lygis:
 
@@ -108,24 +108,24 @@ Su struktūra:
 Failo nuskaitymo laikas:
 | Studentų sk.       | 100,000   | 1,000,000  |
 | :----------    | :------ | :------ |
-| Laikas (s)  | 0.0009 | 0.0059 |
+| Laikas (s)  | 0.6642 | 6.6098 |
 
 Failo grupavimo laikas:
 | Studentų sk.       | 100,000   | 1,000,000  |
 | :----------    | :------ | :------ |
-| Laikas (s)  | 0.0009 | 0.0069 |
+| Laikas (s)  | 0.0514 | 0.6664 |
 
 Su klase:
 
 Failo nuskaitymo laikas:
 | Studentų sk.       | 100,000   | 1,000,000  |
 | :----------    | :------ | :------ |
-| Laikas (s)  | 0.0009 | 0.0059 |
+| Laikas (s)  | 0.5390 | 5.8419 |
 
 Failo grupavimo laikas:
 | Studentų sk.       | 100,000   | 1,000,000  |
 | :----------    | :------ | :------ |
-| Laikas (s)  | 0.0009 | 0.0069 |
+| Laikas (s)  | 0.0603 | 0.6742 |
 
 ## Programos diegimas ir paleidimas
 
