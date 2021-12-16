@@ -23,19 +23,19 @@ Vardenis    Pavardenis      5.25
 Galutinis vidurkis yra apskaičiuojamas pagal formulę `galutinis = 0.4 * vidurkis + 0.6 * egzaminas`.
 
 
-### Programos veikimo greičio analizė su klase, pritaikius "Rule of three".
+### Programos veikimo greičio analizė su abstrakčia "Žmogaus" klase:
 
 Failo nuskaitymo laikas:
 
 | Studentų sk.       | 100,000   | 1,000,000  |
 | :----------    | :------ | :------ |
-| Laikas (s)  | 0.5306 | 5.2430 |
+| Laikas (s)  | 0.7141 | 6.2873 |
 
 Failo grupavimo laikas:
 
 | Studentų sk.       | 100,000   | 1,000,000  |
 | :----------    | :------ | :------ |
-| Laikas (s)  | 0.0598 | 0.6500 |
+| Laikas (s)  | 0.0787 | 0.7380 |
 
 ## Programos diegimas ir paleidimas
 
@@ -51,5 +51,6 @@ Failo grupavimo laikas:
 - [v.04](https://github.com/UgniusBraun/1-oji-uzduotis/releases/tag/V.04) - Ketvirtoji programos versija. Pridėta galimybė generuoti failą, su daug studentų, bei atliekama programos veikimo greičio analizė.
 - [v.05](https://github.com/UgniusBraun/1-oji-uzduotis/releases/tag/V.05) - Penktoji programos versija. Pakeistas naudojamas konteineris iš vector į list. Taip pat patobulintos programos veikimo sparta palyginta su praeitos realizacijos veikimo sparta.
 - [v.10](https://github.com/UgniusBraun/1-oji-uzduotis/releases/tag/V.10) - Šeštoji programos versija. Grupavimo dalis tiek vector tiek list konteineriams padaryta naudojantis pora skirtingų strategijų. Visų bandytų variantų veikimo sparta palyginama.
-- [v1.1](https://github.com/UgniusBraun/2-oji-uzduotis/releases/tag/V.10) - Septintoji programos versija. Iš struktūros tipo pakeista į klasės tipą. Taip pat panaudoti skirtingi kompiliatoriaus optimizavimo lygiai, ir palyginta veikimo sparta visais variantais.
-- [v1.2](https://github.com/UgniusBraun/2-oji-uzduotis/releases/tag/V.10) - Aštuntoji programos versija. Kodas beveik nesiskiria, pridėtas destruktorius, copy konstruktorius ir copy assignment konstruktorius, tam kad klasė atitiktų "Rule of three".
+- [v1.1](https://github.com/UgniusBraun/2-oji-uzduotis/releases/tag/V1.1) - Septintoji programos versija. Iš struktūros tipo pakeista į klasės tipą. Taip pat panaudoti skirtingi kompiliatoriaus optimizavimo lygiai, ir palyginta veikimo sparta visais variantais.
+- [v1.2](https://github.com/UgniusBraun/2-oji-uzduotis/releases/tag/V1.2) - Aštuntoji programos versija. Kodas beveik nesiskiria, pridėtas destruktorius, copy konstruktorius ir copy assignment konstruktorius, tam kad klasė atitiktų "Rule of three".
+- [v1.5](https://github.com/UgniusBraun/2-oji-uzduotis/releases/tag/V1.2) - Devintoji programos versija. Padaryta abstrakčioji klasė "Žmogus", iš kurio išvesta "Studentas" klasė.
