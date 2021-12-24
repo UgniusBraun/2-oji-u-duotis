@@ -54,3 +54,4 @@ Failo grupavimo laikas:
 - [v1.1](https://github.com/UgniusBraun/2-oji-uzduotis/releases/tag/V1.1) - Septintoji programos versija. Iš struktūros tipo pakeista į klasės tipą. Taip pat panaudoti skirtingi kompiliatoriaus optimizavimo lygiai, ir palyginta veikimo sparta visais variantais.
 - [v1.2](https://github.com/UgniusBraun/2-oji-uzduotis/releases/tag/V1.2) - Aštuntoji programos versija. Kodas beveik nesiskiria, pridėtas destruktorius, copy konstruktorius ir copy assignment konstruktorius, tam kad klasė atitiktų "Rule of three".
 - [v1.5](https://github.com/UgniusBraun/2-oji-uzduotis/releases/tag/V1.5) - Devintoji programos versija. Padaryta abstrakčioji klasė "Žmogus", iš kurio išvesta "Studentas" klasė.
+-[v2.0](https://github.com/UgniusBraun/2-oji-uzduotis/releases/tag/V2.0) - Dešimtoji programos versija. Padaryta doxygen dokumentacija.
